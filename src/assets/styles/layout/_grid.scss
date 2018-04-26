@@ -1,0 +1,33 @@
+.container-fluid {
+  max-width: 100%;
+  padding: 0px 20px;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-start-column {
+  @extend .flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.flex-center {
+  @extend .flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-start-center {
+  @extend .flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.flex-between-center {
+  @extend .flex;
+  justify-content: space-between;
+  align-items: center;
+}

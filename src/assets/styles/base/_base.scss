@@ -1,0 +1,14 @@
+@import 'reset';
+@import 'font';
+@import 'reuse';
+@import 'transition';
+
+body {
+  font-size: 14px;
+  background-color: #eee;
+}
+
+:root {
+  --default-color: #333;
+  --primary-color: #666;
+}

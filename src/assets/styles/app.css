@@ -1,0 +1,47 @@
+button, input, select, textarea, a {
+  outline: none; }
+
+h1, h2, h3, h4, h5 {
+  margin: 0px;
+  padding: 0px; }
+
+.relative {
+  position: relative; }
+
+.pointer {
+  cursor: pointer; }
+
+.transition-slow {
+  transition: all 0.3s ease; }
+
+body {
+  font-size: 14px;
+  background-color: #eee; }
+
+:root {
+  --default-color: #333;
+  --primary-color: #666; }
+
+.container-fluid {
+  max-width: 100%;
+  padding: 0px 20px;
+  margin: 0 auto; }
+
+.flex, .flex-start-column, .flex-center, .flex-start-center, .flex-between-center {
+  display: flex; }
+
+.flex-start-column {
+  justify-content: flex-start;
+  flex-direction: column; }
+
+.flex-center {
+  justify-content: center;
+  align-items: center; }
+
+.flex-start-center {
+  justify-content: flex-start;
+  align-items: center; }
+
+.flex-between-center {
+  justify-content: space-between;
+  align-items: center; }
