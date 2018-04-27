@@ -1,7 +1,7 @@
 # Contact List
 > Management your contact list with that application
 
-## Project Requires
+## Project Requirements
 - React, Redux and Webpack
 - Create and manage new contact
 - Create and manage new messages
