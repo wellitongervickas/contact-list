@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800");
+@import url("https://use.fontawesome.com/releases/v5.0.10/css/all.css");
 button, input, select, textarea, a {
   outline: none; }
 
@@ -5,26 +7,69 @@ h1, h2, h3, h4, h5 {
   margin: 0px;
   padding: 0px; }
 
+a {
+  color: var(--default-text-color);
+  text-decoration: none; }
+
+.uppercase {
+  text-transform: uppercase; }
+
 .relative {
   position: relative; }
 
 .pointer {
   cursor: pointer; }
 
+.unstyled-list {
+  list-style: none;
+  padding: 0px;
+  margin: 0px; }
+
+.user-select, .header-section .header-section-title {
+  user-select: none; }
+
 .transition-slow {
   transition: all 0.3s ease; }
 
+.fade-enter {
+  opacity: 0;
+  z-index: 1; }
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 250ms ease-in; }
+
 body {
+  font-family: 'Open Sans', sans-serif;
   font-size: 14px;
-  background-color: #eee; }
+  background-color: var(--primary-color); }
 
 :root {
-  --default-color: #333;
-  --primary-color: #666; }
+  --primary-color: #f06292;
+  --blue-color: #5ED9E7;
+  --yellow-color: #FCCA21;
+  --default-text-color: #333333;
+  --light-text-color: #eeeeee; }
+
+.header-section {
+  background-color: #fff;
+  margin-top: 30px; }
+  .header-section .header-section-title {
+    color: var(--light-text-color);
+    font-weight: 600;
+    padding: 20px;
+    background-color: var(--blue-color); }
+    .header-section .header-section-title .title-icon {
+      font-size: 32px;
+      position: absolute;
+      top: -20px;
+      left: -15px; }
+  .header-section .header-section-menu a {
+    padding: 23px; }
 
 .container-fluid {
   max-width: 100%;
-  padding: 0px 20px;
+  padding: 0px 30px;
   margin: 0 auto; }
 
 .flex, .flex-start-column, .flex-center, .flex-start-center, .flex-between-center {
@@ -45,3 +90,8 @@ body {
 .flex-between-center {
   justify-content: space-between;
   align-items: center; }
+
+.sections-content {
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: inset 0px 7px 10px 0px rgba(0, 0, 0, 0.2); }

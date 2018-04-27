@@ -1,14 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800');
+@import url('https://use.fontawesome.com/releases/v5.0.10/css/all.css');
 @import 'reset';
 @import 'font';
 @import 'reuse';
 @import 'transition';
 
 body {
+	font-family: 'Open Sans', sans-serif;
   font-size: 14px;
-  background-color: #eee;
+  background-color: var(--primary-color);
 }
 
 :root {
-  --default-color: #333;
-  --primary-color: #666;
+  --primary-color: #f06292;
+  --blue-color: #5ED9E7;
+  --yellow-color: #FCCA21;
+  --default-text-color: #333333;
+  --light-text-color: #eeeeee;
 }

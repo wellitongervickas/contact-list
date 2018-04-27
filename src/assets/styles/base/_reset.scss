@@ -6,3 +6,8 @@ h1, h2, h3, h4, h5 {
   margin: 0px;
   padding: 0px;
 }
+
+a {
+  color: var(--default-text-color);
+  text-decoration: none;
+}

@@ -1,0 +1,25 @@
+.header-section {
+	background-color: #fff;
+	margin-top: 30px;
+
+	.header-section-title {
+		@extend .user-select;
+		color: var(--light-text-color);
+		font-weight: 600;
+		padding: 20px;
+		background-color: var(--blue-color);
+
+		.title-icon {
+			font-size: 32px;
+			position: absolute;
+			top: -20px;
+			left: -15px;
+		}
+	}
+
+	.header-section-menu {
+		a {
+			padding: 23px;
+		}
+	}
+}
