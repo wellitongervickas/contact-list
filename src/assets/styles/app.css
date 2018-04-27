@@ -42,35 +42,53 @@ a {
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
-  background-color: var(--primary-color); }
+  background-color: var(--purple-color); }
 
 :root {
-  --primary-color: #f06292;
+  --primary-color: #9C27B0;
+  --purple-color: #671d75;
   --blue-color: #5ED9E7;
   --yellow-color: #FCCA21;
+  --light-color: #eee;
+  --dark-color: #333333;
   --default-text-color: #333333;
   --light-text-color: #eeeeee; }
 
 .header-section {
-  background-color: #fff;
-  margin-top: 30px; }
+  background-color: #fff; }
   .header-section .header-section-title {
     color: var(--light-text-color);
     font-weight: 600;
     padding: 20px;
-    background-color: var(--blue-color); }
+    background-color: var(--primary-color); }
     .header-section .header-section-title .title-icon {
-      font-size: 32px;
+      font-size: 16px;
+      margin-right: 10px; }
+    .header-section .header-section-title .title-text {
+      font-weight: 900; }
+      .header-section .header-section-title .title-text a {
+        color: #fff; }
+    .header-section .header-section-title:after {
+      content: '';
+      width: 30px;
+      height: 58px;
+      background-color: var(--primary-color);
       position: absolute;
-      top: -20px;
-      left: -15px; }
+      transform: skew(-10deg);
+      right: -30px;
+      border-right: 15px solid #61116f; }
   .header-section .header-section-menu a {
-    padding: 23px; }
+    padding: 20px; }
+    .header-section .header-section-menu a span {
+      margin-left: 10px; }
+    .header-section .header-section-menu a.active {
+      color: var(--light-text-color);
+      background-color: var(--primary-color); }
 
 .container-fluid {
   max-width: 100%;
-  padding: 0px 30px;
-  margin: 0 auto; }
+  margin: 30px;
+  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.2); }
 
 .flex, .flex-start-column, .flex-center, .flex-start-center, .flex-between-center {
   display: flex; }
@@ -92,6 +110,7 @@ body {
   align-items: center; }
 
 .sections-content {
+  min-height: 400px;
   background-color: #fff;
   padding: 20px;
   box-shadow: inset 0px 7px 10px 0px rgba(0, 0, 0, 0.2); }

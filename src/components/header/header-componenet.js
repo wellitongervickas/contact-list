@@ -8,20 +8,27 @@ class HeaderComponenet extends Component {
       <div className="header-section flex-between-center">
         <div className="header-section-title relative uppercase flex-center">
           <span className="title-icon">
-            <i className="fas fa-comment-alt"></i>
+            <i className="fas fa-address-book"></i>
           </span>
-          <span className="title-text">{configSystem.lang.PROJECT_NAME}</span>
+          <span className="title-text">
+            <NavLink to="/">
+              {configSystem.lang.PROJECT_NAME}
+            </NavLink >
+          </span>
         </div>
         <div className="header-section-menu">
           <ul className="unstyled-list flex-start-center">
             <li>
-              <NavLink to="/">Home</NavLink >
+              <NavLink to="/contacts">
+                <i className="fas fa-users"></i> 
+                <span>Contacts</span>
+              </NavLink >
             </li>
-            <li>
-              <NavLink to="/contacts">Contacts</NavLink >
-            </li>
-            <li>
-              <NavLink to="/messages">Messages</NavLink >
+            <li className="menu-item">
+              <NavLink to="/messages">
+                <i className="fas fa-envelope"></i> 
+                <span>Messages</span>
+              </NavLink >
             </li>
           </ul>
         </div>
