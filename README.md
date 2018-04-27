@@ -1,5 +1,5 @@
 # Contact List
-> Management your finances with that application
+> Management your contact list with that application
 
 ## Project Requires
 - React, Redux and Webpack
