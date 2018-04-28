@@ -1,3 +1,5 @@
 {
-  "PROJECT_NAME": "Contact List"
+  "PROJECT_NAME": "Contact List",
+  "CONTACTS": "Contacts",
+  "MESSAGES": "Messages"
 }

@@ -1,0 +1,41 @@
+$default-padding-item: 10px;
+
+.contact-list {
+  .list-table-header, .list-table-body {
+    display: grid;
+    grid-template-columns: 90% 10%;
+  }
+
+  .list-table-header {
+    font-weight: 900;
+
+    .list-table-header-item {
+      padding: $default-padding-item;
+    }
+  }
+
+  .list-table-body {
+    border: 1px solid #eee;
+
+    .list-table-body-item {
+      padding: $default-padding-item;
+    }
+
+    .list-actions {
+      color: #ccc;
+    }
+
+    &:hover {
+      .list-actions {
+        color: #333;
+      }
+    }
+
+    &:nth-child(even), &:hover {
+      background-color: #F9F9F9;
+    }
+    &:last-of-type {
+      border-top: 1px solid transparent;
+    }
+  }
+}
