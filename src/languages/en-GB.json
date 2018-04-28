@@ -1,5 +1,8 @@
 {
   "PROJECT_NAME": "Contact List",
   "CONTACTS": "Contacts",
-  "MESSAGES": "Messages"
+  "MESSAGES": "Messages",
+  "ALL_CONTACTS": "All Contacts",
+  "NEW_CONTACT": "New Contact",
+  "LOADING": "Loading"
 }

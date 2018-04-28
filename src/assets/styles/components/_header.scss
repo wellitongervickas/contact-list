@@ -31,19 +31,4 @@
       border-right: 15px solid #61116f;
     }
 	}
-
-	.header-section-menu {
-		a {
-      padding: 20px;
-
-      span {
-        margin-left: 10px;
-      }
-
-      &.active {
-        color: var(--light-text-color);
-        background-color: var(--primary-color);
-      }
-		}
-	}
 }

@@ -10,6 +10,9 @@ $default-padding-item: 10px;
   }
 
   .list-table-body {
+    display: grid;
+    grid-template-areas: "1 1 1 1 1";
+    grid-auto-columns: 20%;
     border: 1px solid #eee;
     margin-bottom: 5px;
 
@@ -22,6 +25,13 @@ $default-padding-item: 10px;
 
       .fas {
         margin-left: 5px;
+      }
+    }
+
+    .list-messages {
+      color: #666;
+      .fas {
+        margin-right: 5px;
       }
     }
 

@@ -16,16 +16,6 @@ class HeaderComponenet extends Component {
             </NavLink >
           </span>
         </div>
-        <div className="header-section-menu">
-          <ul className="unstyled-list flex-start-center">
-            <li className="menu-item">
-              <NavLink to="/messages">
-                <i className="fas fa-envelope"></i>
-                <span>{configSystem.lang.MESSAGES}</span>
-              </NavLink >
-            </li>
-          </ul>
-        </div>
       </div>
     );
   }
