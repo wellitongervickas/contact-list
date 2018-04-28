@@ -1,19 +1,6 @@
 $default-padding-item: 10px;
 
 .contact-list {
-  .list-table-header, .list-table-body {
-    display: grid;
-    grid-template-columns: 90% 10%;
-  }
-
-  .list-table-header {
-    font-weight: 900;
-
-    .list-table-header-item {
-      padding: $default-padding-item;
-    }
-  }
-
   .list-table-body {
     border: 1px solid #eee;
 
@@ -23,6 +10,10 @@ $default-padding-item: 10px;
 
     .list-actions {
       color: #ccc;
+
+      .fas {
+        margin-left: 5px;
+      }
     }
 
     &:hover {

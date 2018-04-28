@@ -1,6 +1,5 @@
 import homePage from '../../views/home/home-page';
 import MessagesPage from '../../views/messages/messages-page';
-import ContactsPage from '../../views/contacts/contacts-page';
 
 const routes = [
   {
@@ -11,10 +10,6 @@ const routes = [
   {
     path: "/messages",
     main: MessagesPage
-  },
-  {
-    path: "/contacts",
-    main: ContactsPage
   }
 ];
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import configSystem from '../../models/system/config-system';
+import Contact from '../../models/class/contact-class';
 import services from '../../services/services';
 
 class ContactListComponent extends Component {
@@ -8,22 +8,21 @@ class ContactListComponent extends Component {
     this.state = {
       contacts: []
     }
-  }
+  };
 
   componentDidMount() {
     services.getContacts()
-    .then(res => this.setState({contacts: res.data}))
+    .then(res => this.setState({
+      contacts: res.data.map(item => new Contact(item))
+    }))
     .catch(err => console.error(err))
-  }
+  };
 
   render() {
     return (
       <div className="contact-list">
-        <div className="list-table-header">
-          <div className="list-table-header-item uppercase">{configSystem.lang.CONTACTS}</div>
-        </div>
         {this.state.contacts.map((item, index) => (
-          <div className="list-table-body" key={item.id}>
+          <div className="list-table-body flex-between-center " key={item.id}>
             <div className="list-table-body-item pointer">{item.name}</div>
             <div className="list-table-body-item list-actions flex-between-center">
               <i className="fas fa-edit pointer"></i>
@@ -33,7 +32,7 @@ class ContactListComponent extends Component {
         ))}
       </div>
     );
-  }
+  };
 };
 
 export default ContactListComponent;

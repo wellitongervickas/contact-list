@@ -18,12 +18,6 @@ class HeaderComponenet extends Component {
         </div>
         <div className="header-section-menu">
           <ul className="unstyled-list flex-start-center">
-            <li>
-              <NavLink to="/contacts">
-                <i className="fas fa-users"></i>
-                <span>{configSystem.lang.CONTACTS}</span>
-              </NavLink >
-            </li>
             <li className="menu-item">
               <NavLink to="/messages">
                 <i className="fas fa-envelope"></i>

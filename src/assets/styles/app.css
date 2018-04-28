@@ -84,21 +84,14 @@ body {
       color: var(--light-text-color);
       background-color: var(--primary-color); }
 
-.contact-list .list-table-header, .contact-list .list-table-body {
-  display: grid;
-  grid-template-columns: 90% 10%; }
-
-.contact-list .list-table-header {
-  font-weight: 900; }
-  .contact-list .list-table-header .list-table-header-item {
-    padding: 10px; }
-
 .contact-list .list-table-body {
   border: 1px solid #eee; }
   .contact-list .list-table-body .list-table-body-item {
     padding: 10px; }
   .contact-list .list-table-body .list-actions {
     color: #ccc; }
+    .contact-list .list-table-body .list-actions .fas {
+      margin-left: 5px; }
   .contact-list .list-table-body:hover .list-actions {
     color: #333; }
   .contact-list .list-table-body:nth-child(even), .contact-list .list-table-body:hover {
