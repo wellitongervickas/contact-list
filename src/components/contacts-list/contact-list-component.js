@@ -55,7 +55,11 @@ class ContactListComponent extends Component {
 
         {this.state.contacts.map((item, index) => (
           <div className="list-table-body" key={item.id}>
-            <div className="list-table-body-item pointer">{item.name}</div>
+            <div className="list-table-body-item pointer">
+              <NavLink to={`/profile/${item.id}`}>
+                {item.name}
+              </NavLink >
+            </div>
             <div className="list-table-body-item">{item.email}</div>
             <div className="list-table-body-item">{item.phone}</div>
             <div className="list-table-body-item list-messages">

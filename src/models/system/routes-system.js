@@ -1,10 +1,18 @@
-import homePage from '../../views/home/home-page';
+// Home Page
+import HomePage from '../../views/home/home-page';
+
+// Contact Page
+import ProfilePage from '../../views/profile/profile-page';
 
 const routes = [
   {
     path: "/",
     exact: true,
-    main: homePage
+    main: HomePage
+  },
+  {
+    path: "/profile/:id",
+    main: ProfilePage
   }
 ];
 
