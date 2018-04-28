@@ -8,6 +8,11 @@
   display: flex;
 }
 
+.flex-end {
+  @extend .flex;
+  justify-content: flex-end;
+}
+
 .flex-start-column {
   @extend .flex;
   justify-content: flex-start;

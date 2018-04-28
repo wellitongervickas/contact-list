@@ -3,8 +3,6 @@ import React from "react";
 
 // Import Third Party
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import 'normalize.css';
-import './assets/styles/app.css';
 
 // Routes Configuration
 import routes from './models/system/routes-system';

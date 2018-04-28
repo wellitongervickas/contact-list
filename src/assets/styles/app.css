@@ -84,8 +84,24 @@ body {
       color: var(--light-text-color);
       background-color: var(--primary-color); }
 
+.btn {
+  padding: 15px 20px;
+  border-radius: 3px; }
+  .btn.btn-sm {
+    padding: 5px 10px; }
+  .btn.btn-primary {
+    color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: var(--blue-color); }
+
+.contact-list .contact-list-header {
+  margin-bottom: 20px; }
+  .contact-list .contact-list-header h2 {
+    font-size: 16px; }
+
 .contact-list .list-table-body {
-  border: 1px solid #eee; }
+  border: 1px solid #eee;
+  margin-bottom: 5px; }
   .contact-list .list-table-body .list-table-body-item {
     padding: 10px; }
   .contact-list .list-table-body .list-actions {
@@ -104,8 +120,11 @@ body {
   margin: 30px;
   box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.2); }
 
-.flex, .flex-start-column, .flex-center, .flex-start-center, .flex-between-center {
+.flex, .flex-end, .flex-start-column, .flex-center, .flex-start-center, .flex-between-center {
   display: flex; }
+
+.flex-end {
+  justify-content: flex-end; }
 
 .flex-start-column {
   justify-content: flex-start;
@@ -127,4 +146,5 @@ body {
   min-height: 400px;
   background-color: #fff;
   padding: 20px;
-  box-shadow: inset 0px 7px 10px 0px rgba(0, 0, 0, 0.2); }
+  box-shadow: inset 0px 7px 10px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 10px 10px; }
