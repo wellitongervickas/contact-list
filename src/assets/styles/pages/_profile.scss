@@ -12,12 +12,24 @@
     border: 1px solid #eee;
     border-radius: 5px;
 
-    .profile-messages-text {
+    .profile-messages-body {
       border: 1px solid #d4d4d4;
       background-color: #fff;
       margin-bottom: 20px;
       padding: 20px;
       border-radius: 5px;
+
+      .messages-body-item  {
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #eee;
+
+        &:last-of-type {
+          padding-bottom: 0px;
+          border-bottom: none;
+          margin-bottom: 0px;
+        }
+      }
 
       &:last-of-type {
         margin-bottom: 0px;
@@ -26,6 +38,10 @@
 
     .profile-messages-new {
       margin-top: 20px;
+
+      .fas {
+        margin-right: 10px;
+      }
     }
   }
 }

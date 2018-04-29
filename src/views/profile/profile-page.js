@@ -3,6 +3,7 @@ import services from '../../services/services';
 import Contact from '../../models/class/contact-class';
 import Loading from '../../components/loading/loading';
 import configSystem from '../../models/system/config-system';
+import dateUtils from '../../models/utils/date-utils';
 
 class ProfilePage extends Component {
   constructor(props) {
@@ -62,15 +63,28 @@ class ProfilePage extends Component {
             </div>
             <div className="profile-messages">
               {
+                // If have messages
                 this.state.user.messages.length >= 0 &&
                 this.state.user.messages.map((item, index) => (
-                  <div className="profile-messages-text" key={index}>
-                    {item.title}, {item.date}, {item.text}
+                  <div className="profile-messages-body" key={index}>
+                    <div className="messages-body-item messages-body-title">
+                      <h4>{configSystem.lang.TITLE}</h4>
+                      {item.title}
+                    </div>
+                    <div className="messages-body-item messages-body-date">
+                      <h4>{configSystem.lang.DATE}</h4>
+                      {dateUtils.dateParse(item.date)}
+                    </div>
+                    <div className="messages-body-item messages-body-text">
+                      <h4>{configSystem.lang.MESSAGE}</h4>
+                      {item.text}
+                    </div>
                   </div>
                 ))
               }
 
               {
+                // If messages is empty
                 this.state.user.messages.length <= 0 &&
                 <div className="profile-messages-text">{configSystem.lang.DONT_HAVE_MESSAGES}</div>
               }
@@ -78,7 +92,7 @@ class ProfilePage extends Component {
               <div className="profile-messages-new">
                 <button type="button" className="btn btn-primary">
                  <i className="fas fa-paper-plane"></i>
-                  New Message
+                 {configSystem.lang.NEW_MESSAGE}
                 </button>
               </div>
             </div>

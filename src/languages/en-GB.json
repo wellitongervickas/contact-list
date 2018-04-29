@@ -9,5 +9,9 @@
   "EMAIL": "Email",
   "PHONE": "Phone",
   "ALIAS": "Alias",
-  "DONT_HAVE_MESSAGES": "Don't have messages yet!"
+  "DONT_HAVE_MESSAGES": "Don't have messages yet!",
+  "DATE": "Date",
+  "TITLE": "Title",
+  "MESSAGE": "Message",
+  "NEW_MESSAGE": "New Message"
 }

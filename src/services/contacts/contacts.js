@@ -19,7 +19,7 @@ const contacts = (() => {
       headers: {
         'Content-type': 'application/json'
       },
-      data
+      body: data
     });
   };
 

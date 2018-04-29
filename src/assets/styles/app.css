@@ -167,16 +167,26 @@ body {
   padding: 20px;
   border: 1px solid #eee;
   border-radius: 5px; }
-  .section-profile .profile-messages .profile-messages-text {
+  .section-profile .profile-messages .profile-messages-body {
     border: 1px solid #d4d4d4;
     background-color: #fff;
     margin-bottom: 20px;
     padding: 20px;
     border-radius: 5px; }
-    .section-profile .profile-messages .profile-messages-text:last-of-type {
+    .section-profile .profile-messages .profile-messages-body .messages-body-item {
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #eee; }
+      .section-profile .profile-messages .profile-messages-body .messages-body-item:last-of-type {
+        padding-bottom: 0px;
+        border-bottom: none;
+        margin-bottom: 0px; }
+    .section-profile .profile-messages .profile-messages-body:last-of-type {
       margin-bottom: 0px; }
   .section-profile .profile-messages .profile-messages-new {
     margin-top: 20px; }
+    .section-profile .profile-messages .profile-messages-new .fas {
+      margin-right: 10px; }
 
 .sections-content {
   min-height: 400px;
