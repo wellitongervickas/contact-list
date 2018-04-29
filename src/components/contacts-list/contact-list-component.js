@@ -16,6 +16,7 @@ class ContactListComponent extends Component {
 
   handleGetAllContacts() {
 
+    // Enable Loading
     this.setState({ loadingStatus: true })
 
     services.getContacts()
@@ -23,7 +24,10 @@ class ContactListComponent extends Component {
       contacts: res.data.map(item => new Contact(item)),
       loadingStatus: false
     }))
-    .catch(err => console.error(err));
+    .catch(err => {
+      console.error(err)
+      this.setState({ loadingStatus: false })
+    });
   };
 
   handleDeleteContact(id) {
@@ -53,28 +57,30 @@ class ContactListComponent extends Component {
           <Loading></Loading>
         }
 
-        {this.state.contacts.map((item, index) => (
-          <div className="list-table-body" key={item.id}>
-            <div className="list-table-body-item pointer">
-              <NavLink to={`/profile/${item.id}`}>
-                {item.name}
-              </NavLink >
+        {
+          this.state.contacts.map((item, index) => (
+            <div className="list-table-body" key={item.id}>
+              <div className="list-table-body-item pointer">
+                <NavLink to={`/profile/${item.id}`}>
+                  {item.name}
+                </NavLink >
+              </div>
+              <div className="list-table-body-item">{item.email}</div>
+              <div className="list-table-body-item">{item.phone}</div>
+              <div className="list-table-body-item list-messages">
+                <i className="fas fa-envelope pointer"></i>
+                {item.messages.length}
+              </div>
+              <div className="list-table-body-item list-actions flex-end">
+                <i className="fas fa-edit pointer"></i>
+                <i
+                  className="fas fa-trash pointer"
+                  onClick={(e) => this.handleDeleteContact(item.id)}>
+                </i>
+              </div>
             </div>
-            <div className="list-table-body-item">{item.email}</div>
-            <div className="list-table-body-item">{item.phone}</div>
-            <div className="list-table-body-item list-messages">
-              <i className="fas fa-envelope pointer"></i>
-              {item.messages.length}
-            </div>
-            <div className="list-table-body-item list-actions flex-end">
-              <i className="fas fa-edit pointer"></i>
-              <i
-                className="fas fa-trash pointer"
-                onClick={(e) => this.handleDeleteContact(item.id)}>
-              </i>
-            </div>
-          </div>
-        ))}
+          ))
+        }
       </div>
     );
   };

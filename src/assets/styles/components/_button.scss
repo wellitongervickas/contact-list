@@ -1,12 +1,19 @@
 .btn {
   padding: 15px 20px;
   border-radius: 3px;
+  cursor: pointer;
 
   &.btn-sm {
     padding: 5px 10px;
   }
 
   &.btn-primary {
+    color: #fff;
+    border: 1px solid rgba(0,0,0, 0.1);
+    background-color: var(--purple-color);
+  }
+
+  &.btn-info {
     color: #fff;
     border: 1px solid rgba(0,0,0, 0.1);
     background-color: var(--blue-color);

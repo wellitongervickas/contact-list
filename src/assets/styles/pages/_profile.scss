@@ -1,0 +1,31 @@
+.section-profile {
+  .profile-intro {
+    display: grid;
+    grid-template-columns: 23% 23% 23% 23%;
+    grid-column-gap: 20px;
+  }
+
+  .profile-messages {
+    margin-top: 40px;
+    background-color: var(--light-color);
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+
+    .profile-messages-text {
+      border: 1px solid #d4d4d4;
+      background-color: #fff;
+      margin-bottom: 20px;
+      padding: 20px;
+      border-radius: 5px;
+
+      &:last-of-type {
+        margin-bottom: 0px;
+      }
+    }
+
+    .profile-messages-new {
+      margin-top: 20px;
+    }
+  }
+}

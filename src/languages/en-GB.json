@@ -4,5 +4,10 @@
   "MESSAGES": "Messages",
   "ALL_CONTACTS": "All Contacts",
   "NEW_CONTACT": "New Contact",
-  "LOADING": "Loading"
+  "LOADING": "Loading",
+  "NAME": "Name",
+  "EMAIL": "Email",
+  "PHONE": "Phone",
+  "ALIAS": "Alias",
+  "DONT_HAVE_MESSAGES": "Don't have messages yet!"
 }

@@ -82,10 +82,15 @@ body {
 
 .btn {
   padding: 15px 20px;
-  border-radius: 3px; }
+  border-radius: 3px;
+  cursor: pointer; }
   .btn.btn-sm {
     padding: 5px 10px; }
   .btn.btn-primary {
+    color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: var(--purple-color); }
+  .btn.btn-info {
     color: #fff;
     border: 1px solid rgba(0, 0, 0, 0.1);
     background-color: var(--blue-color); }
@@ -150,6 +155,28 @@ body {
 .flex-between-center {
   justify-content: space-between;
   align-items: center; }
+
+.section-profile .profile-intro {
+  display: grid;
+  grid-template-columns: 23% 23% 23% 23%;
+  grid-column-gap: 20px; }
+
+.section-profile .profile-messages {
+  margin-top: 40px;
+  background-color: var(--light-color);
+  padding: 20px;
+  border: 1px solid #eee;
+  border-radius: 5px; }
+  .section-profile .profile-messages .profile-messages-text {
+    border: 1px solid #d4d4d4;
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 5px; }
+    .section-profile .profile-messages .profile-messages-text:last-of-type {
+      margin-bottom: 0px; }
+  .section-profile .profile-messages .profile-messages-new {
+    margin-top: 20px; }
 
 .sections-content {
   min-height: 400px;
