@@ -13,5 +13,9 @@
   "DATE": "Date",
   "TITLE": "Title",
   "MESSAGE": "Message",
-  "NEW_MESSAGE": "New Message"
+  "NEW_MESSAGE": "New Message",
+  "TYPE_TITLE": "Type a title",
+  "TYPE_MESSAGE": "Type a message",
+  "SEND_MESSAGE": "Send Message",
+  "CANCEL": "Cancel"
 }

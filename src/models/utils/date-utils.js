@@ -1,7 +1,6 @@
 const dateUtils = (() => {
 
   function dateParse(date) {
-
     return new Date(date).toLocaleDateString();
   }
 

@@ -5,7 +5,7 @@ import services from '../../services/services';
 import configSystem from '../../models/system/config-system';
 import Loading from '../loading/loading';
 
-class ContactListComponent extends Component {
+class ContactList extends Component {
   constructor() {
     super();
     this.state = {
@@ -31,11 +31,18 @@ class ContactListComponent extends Component {
   };
 
   handleDeleteContact(id) {
+    // Enable Loading
+    this.setState({ loadingStatus: true })
+
     services.deleteContact(id)
     .then(res => {
+      this.setState({ loadingStatus: false })
       this.handleGetAllContacts();
     })
-    .catch(err => console.error(err))
+    .catch(err => {
+      this.setState({ loadingStatus: false })
+      console.error(err)
+    })
   };
 
   componentDidMount() {
@@ -86,4 +93,4 @@ class ContactListComponent extends Component {
   };
 };
 
-export default ContactListComponent;
+export default ContactList;

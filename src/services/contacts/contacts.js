@@ -15,12 +15,7 @@ const contacts = (() => {
   };
 
   function updateContact(id, data) {
-    return axios.put(`${configSystem.endpoint.contacts}/${id}`, {
-      headers: {
-        'Content-type': 'application/json'
-      },
-      body: data
-    });
+    return axios.put(`${configSystem.endpoint.contacts}/${id}`, data);
   };
 
   return {

@@ -36,11 +36,35 @@
       }
     }
 
-    .profile-messages-new {
+    .profile-messages-form, .profile-messages-new {
       margin-top: 20px;
 
       .fas {
         margin-right: 10px;
+      }
+    }
+
+    .profile-messages-form {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid #ccc;
+
+      h4 {
+        margin-bottom: 20px;
+      }
+
+      .messages-form-item  {
+        margin-bottom: 20px;
+
+        &:last-of-type {
+          margin-bottom: 0px;
+        }
+
+        &.messages-form-buttons {
+          button {
+            margin-right: 20px;
+          }
+        }
       }
     }
   }

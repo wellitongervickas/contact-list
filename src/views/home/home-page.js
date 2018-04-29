@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import ContactListComponent from '../../components/contacts-list/contact-list-component';
+import ContactList from '../../components/contacts-list/contact-list';
 
 class HomePage extends Component {
   render() {
     return (
       <div className="sections-content home-page">
-        <ContactListComponent></ContactListComponent>
+        <ContactList></ContactList>
       </div>
     );
   }
