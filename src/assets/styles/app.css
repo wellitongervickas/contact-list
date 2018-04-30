@@ -118,35 +118,6 @@ body {
   .btn:hover {
     box-shadow: inset 0 0 20px 5px rgba(0, 0, 0, 0.1); }
 
-.contact-list {
-  height: 100%; }
-  .contact-list .contact-list-header {
-    margin-bottom: 20px; }
-    .contact-list .contact-list-header h2 {
-      font-size: 16px; }
-  .contact-list .list-table-body {
-    display: grid;
-    grid-template-areas: "1 1 1 1 1";
-    grid-auto-columns: 20%;
-    border: 1px solid #eee;
-    margin-bottom: 5px; }
-    .contact-list .list-table-body .list-table-body-item {
-      padding: 10px; }
-    .contact-list .list-table-body .list-actions {
-      color: #ccc; }
-      .contact-list .list-table-body .list-actions .fas {
-        margin-left: 5px; }
-    .contact-list .list-table-body .list-messages {
-      color: #666; }
-      .contact-list .list-table-body .list-messages .fas {
-        margin-right: 5px; }
-    .contact-list .list-table-body:hover .list-actions {
-      color: #333; }
-    .contact-list .list-table-body:nth-child(even), .contact-list .list-table-body:hover {
-      background-color: #F9F9F9; }
-    .contact-list .list-table-body:last-of-type {
-      border-top: 1px solid transparent; }
-
 .loading {
   width: 100%;
   height: 100%;
@@ -184,6 +155,45 @@ body {
   justify-content: space-between;
   align-items: center; }
 
+.section-home .contact-list {
+  height: 100%; }
+  .section-home .contact-list .list-header {
+    margin-bottom: 20px; }
+    .section-home .contact-list .list-header h2 {
+      font-size: 16px; }
+  .section-home .contact-list .list-table-body--empty {
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #ccc;
+    font-size: 22px; }
+    .section-home .contact-list .list-table-body--empty i {
+      font-size: 32px; }
+  .section-home .contact-list .list-table-body {
+    display: grid;
+    grid-template-areas: "1 1 1 1";
+    grid-auto-columns: 25%;
+    border: 1px solid #eee;
+    margin-bottom: 5px; }
+    .section-home .contact-list .list-table-body .list-table-body-item {
+      padding: 10px; }
+    .section-home .contact-list .list-table-body .list-actions {
+      color: #ccc; }
+      .section-home .contact-list .list-table-body .list-actions i {
+        margin-left: 5px; }
+    .section-home .contact-list .list-table-body .list-messages {
+      color: #666; }
+      .section-home .contact-list .list-table-body .list-messages i {
+        margin-right: 5px; }
+    .section-home .contact-list .list-table-body:hover .list-actions {
+      color: #333; }
+    .section-home .contact-list .list-table-body:nth-child(even), .section-home .contact-list .list-table-body:hover {
+      background-color: #F9F9F9; }
+    .section-home .contact-list .list-table-body:last-of-type {
+      border-top: 1px solid transparent; }
+
 .section-profile .profile-intro {
   display: grid;
   grid-template-columns: 23% 23% 23% 23%;
@@ -205,6 +215,10 @@ body {
       padding-bottom: 10px;
       margin-bottom: 10px;
       border-bottom: 1px solid #eee; }
+      .section-profile .profile-messages .profile-messages-body .messages-body-item.messages-body-title i {
+        position: absolute;
+        right: -10px;
+        top: -10px; }
       .section-profile .profile-messages .profile-messages-body .messages-body-item:last-of-type {
         padding-bottom: 0px;
         border-bottom: none;
@@ -213,7 +227,7 @@ body {
       margin-bottom: 0px; }
   .section-profile .profile-messages .profile-messages-form, .section-profile .profile-messages .profile-messages-new {
     margin-top: 20px; }
-    .section-profile .profile-messages .profile-messages-form .fas, .section-profile .profile-messages .profile-messages-new .fas {
+    .section-profile .profile-messages .profile-messages-form i, .section-profile .profile-messages .profile-messages-new i {
       margin-right: 10px; }
   .section-profile .profile-messages .profile-messages-form {
     margin-top: 20px;

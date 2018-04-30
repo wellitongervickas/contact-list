@@ -4,14 +4,21 @@ import HomePage from '../../views/home/home-page';
 // Contact Page
 import ProfilePage from '../../views/profile/profile-page';
 
+// Create Page
+import CreatePage from '../../views/create/create-page';
+
 const routes = [
   {
-    path: "/",
+    path: '/',
     exact: true,
     main: HomePage
   },
   {
-    path: "/profile/:id",
+    path: '/create',
+    main: CreatePage
+  },
+  {
+    path: '/profile/:id',
     main: ProfilePage
   }
 ];

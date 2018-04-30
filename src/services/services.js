@@ -3,26 +3,41 @@ import contacts from './contacts/contacts';
 const services = (() => {
 
   function getContacts() {
-    return contacts.getAll();
+    return contacts.getContacts();
   };
 
   function deleteContact(id) {
-    return contacts.delete(id)
+    return contacts.deleteContact(id)
   };
 
   function getContact(id) {
-    return contacts.getById(id);
+    return contacts.getContact(id);
   };
 
   function updateContact(id, data) {
     return contacts.updateContact(id, data);
+  };
+
+  function getFullContact(id) {
+    return contacts.getFullContact(id);
+  };
+
+  function createMessage(parentId, data) {
+    return contacts.createMessage(parentId, data);
   }
+
+  function deleteMessage(parentId, id) {
+    return contacts.deleteMessage(parentId, id);
+  };
 
   return {
     getContacts,
     getContact,
+    getFullContact,
     deleteContact,
-    updateContact
+    updateContact,
+    deleteMessage,
+    createMessage
   };
 })();
 

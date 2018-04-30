@@ -2,27 +2,50 @@ import axios from 'axios';
 import configSystem from '../../models/system/config-system';
 
 const contacts = (() => {
-  function getAll() {
+
+  // Contact
+  function getContacts() {
     return axios.get(configSystem.endpoint.contacts);
   };
 
-  function deleteById(id) {
+  function deleteContact(id) {
     return axios.delete(`${configSystem.endpoint.contacts}/${id}`);
   };
 
-  function getById(id) {
+  function getContact(id) {
     return axios.get(`${configSystem.endpoint.contacts}/${id}`);
+  };
+
+  function getFullContact(id) {
+    return axios.all([ getContact(id), getMessagesById(id) ])
   };
 
   function updateContact(id, data) {
     return axios.put(`${configSystem.endpoint.contacts}/${id}`, data);
   };
 
+  // Messages
+  function getMessagesById(parentId) {
+    return axios.get(`${configSystem.endpoint.contacts}/${parentId}/messages`)
+  };
+
+  function createMessage(parentId, data) {
+    return axios.post(`${configSystem.endpoint.contacts}/${parentId}/messages`, data)
+  }
+
+  function deleteMessage(parentId, id) {
+    return axios.delete(`${configSystem.endpoint.contacts}/${parentId}/messages/${id}`)
+  };
+
   return {
-    getAll,
-    getById,
+    getContacts,
+    getContact,
+    getFullContact,
     updateContact,
-    delete: deleteById
+    deleteContact,
+    createMessage,
+    getMessagesById,
+    deleteMessage
   };
 })();
 

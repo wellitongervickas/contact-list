@@ -21,6 +21,47 @@ class ProfilePage extends Component {
     this.handleSubmitNewMessage = this.handleSubmitNewMessage.bind(this)
     this.handleNewMessageTitle = this.handleNewMessageTitle.bind(this)
     this.handleNewMessageText = this.handleNewMessageText.bind(this)
+    this.handleDeleteMessage = this.handleDeleteMessage.bind(this)
+  }
+
+  clearNewMessageForm() {
+    this.setState({
+      messageFormTitle: '',
+      messageFormText: ''
+    });
+  }
+
+  /**
+    * When called that function, remove one message from
+    * messages list
+  */
+
+  handleDeleteMessage(id) {
+
+    // Enable Loading
+    this.setState({ loadingStatus: true })
+
+    services.deleteMessage(this.props.match.params.id, id)
+    .then(res => {
+
+      // Sanitize messages
+      let user = this.state.user;
+      user.messages = user.messages.filter(item => item.id !== id);
+
+      // Update Status
+      this.setState({
+        user,
+        loadingStatus: false
+      });
+
+      this.clearNewMessageForm();
+
+    })
+    .catch(err => {
+
+      this.setState({ loadingStatus: false })
+      console.error(err)
+    })
   }
 
   /**
@@ -44,25 +85,31 @@ class ProfilePage extends Component {
     // Enable Loading
     this.setState({ loadingStatus: true })
 
-    let updatedUser = this.state.user;
-    updatedUser.messages.push({
-      title: this.state.messageFormTitle || 'Empty Title',
+    // Create message object
+    let newMessage = {
+      title: this.state.messageFormTitle,
       date: new Date().getTime(),
-      text: this.state.messageFormText || 'Empty Message'
-    });
+      text: this.state.messageFormText
+    };
 
-    this.setState({
-      user: updatedUser
-    })
-
-    // Save new message
-    services.updateContact(this.props.match.params.id, this.state.user)
+    services.createMessage(this.props.match.params.id, newMessage)
     .then(res => {
-      this.setState({ loadingStatus: false })
+
+      // Insert and update messages list
+      let user = this.state.user;
+      user.messages.push(res.data);
+
+      this.setState({
+        user,
+        loadingStatus: false,
+        newMessageStatus: false,
+      });
+
+      this.clearNewMessageForm();
     })
     .catch(err => {
       console.error(err)
-      this.setState({ loadingStatus: false })
+      this.setState({ loadingStatus: true })
     })
   }
 
@@ -93,12 +140,16 @@ class ProfilePage extends Component {
     // Enable Loading
     this.setState({ loadingStatus: true })
 
-    // Get contact by ID using service
-    services.getContact(this.props.match.params.id)
-    .then(res => this.setState({
-      user: new Contact(res.data),
-      loadingStatus: false
-    }))
+    // Get contact info and messages
+    services.getFullContact(this.props.match.params.id)
+    .then(res => {
+      this.setState({
+        user: new Contact(res[0].data, res[1].data),
+        loadingStatus: false
+      });
+
+      this.clearNewMessageForm();
+    })
     .catch(err => {
       console.error(err)
       this.setState({ loadingStatus: false })
@@ -136,15 +187,20 @@ class ProfilePage extends Component {
                 {this.state.user.phone}
               </div>
             </div>
+
             <div className="profile-messages">
               {
                 // If have messages
                 this.state.user.messages.length >= 0 &&
                 this.state.user.messages.map((item, index) => (
                   <div className="profile-messages-body" key={index}>
-                    <div className="messages-body-item messages-body-title">
+                    <div className="messages-body-item messages-body-title relative">
                       <h4>{configSystem.lang.TITLE}</h4>
                       {item.title}
+                      <i
+                        className="fas fa-trash pointer"
+                        onClick={(e) => this.handleDeleteMessage(item.id)}>
+                      </i>
                     </div>
                     <div className="messages-body-item messages-body-date">
                       <h4>{configSystem.lang.DATE}</h4>
@@ -161,7 +217,9 @@ class ProfilePage extends Component {
               {
                 // If messages is empty
                 this.state.user.messages.length <= 0 &&
-                <div className="profile-messages-text">{configSystem.lang.DONT_HAVE_MESSAGES}</div>
+                <div className="profile-messages-text">
+                  {configSystem.lang.DONT_HAVE_MESSAGES}
+                </div>
               }
 
               {
@@ -190,7 +248,9 @@ class ProfilePage extends Component {
                   <div className="messages-form-item messages-form-buttons">
                     <button
                       type="submit"
-                      disabled={!this.state.messageFormTitle.length || !this.state.messageFormText.length}
+                      disabled={
+                        !this.state.messageFormTitle.length || !this.state.messageFormText.length
+                      }
                       className="btn btn-success">
                       <i className="fas fa-paper-plane"></i>
                       {configSystem.lang.SEND_MESSAGE}

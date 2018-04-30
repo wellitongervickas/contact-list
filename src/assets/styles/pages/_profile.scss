@@ -24,6 +24,14 @@
         margin-bottom: 10px;
         border-bottom: 1px solid #eee;
 
+        &.messages-body-title {
+          i {
+            position: absolute;
+            right: -10px;
+            top: -10px;
+          }
+        }
+
         &:last-of-type {
           padding-bottom: 0px;
           border-bottom: none;
@@ -39,7 +47,7 @@
     .profile-messages-form, .profile-messages-new {
       margin-top: 20px;
 
-      .fas {
+      i {
         margin-right: 10px;
       }
     }
