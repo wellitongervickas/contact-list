@@ -1,5 +1,4 @@
 // Create a new React App
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
@@ -11,5 +10,6 @@ import 'normalize.css';
 // Stylesheets
 import './assets/styles/app.css';
 
+// Initialize React App
 ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();

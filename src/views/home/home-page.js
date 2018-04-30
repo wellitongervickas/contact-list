@@ -6,12 +6,11 @@ import configSystem from '../../models/system/config-system';
 import Loading from '../../components/loading/loading';
 
 class HomePage extends Component {
-  constructor() {
-    super();
-    this.state = {
-      loadingStatus: false,
-      contacts: []
-    }
+
+  // Default States
+  state = {
+    loadingStatus: false,
+    contacts: []
   };
 
   /**
@@ -27,11 +26,13 @@ class HomePage extends Component {
     services.deleteContact(id)
     .then(res => {
       this.setState({
+
         contacts: this.state.contacts.filter(item => item.id !== id),
         loadingStatus: false
       })
     })
     .catch(err => {
+
       this.setState({ loadingStatus: false })
       console.error(err)
     })
@@ -44,15 +45,16 @@ class HomePage extends Component {
 
     services.getContacts()
     .then(res => this.setState({
+
       contacts: res.data.map(item => new Contact(item)),
       loadingStatus: false
     }))
     .catch(err => {
+
       console.error(err)
       this.setState({ loadingStatus: false })
     });
   };
-
 
   render() {
     return (
