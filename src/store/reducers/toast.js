@@ -7,7 +7,7 @@ export default function toast(state = [], actions) {
         toastType: actions.toastType,
         status: true,
         timetoleave: (new Date().getTime() + 5000),
-        id: new Date().getTime()
+        id: Math.random()
       }];
 
     case 'REMOVE_TOAST':
