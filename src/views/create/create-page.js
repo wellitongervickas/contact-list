@@ -95,52 +95,61 @@ class CreatePage extends Component {
         </div>
         <div className="section-create-form">
           <form className="create-form" onSubmit={ (e) => this.handleSubmitNewContact(e)}>
-            <div className="create-form-item flex-start-column">
-              <label htmlFor="input-name">{configSystem.lang.NAME}</label>
-              <input
-              className="input-default"
-              id="input-name"
-              type="text"
-              maxLength="20"
-              value={this.state.inputName}
-              onChange={ (e) => this.setState({inputName: e.target.value}) }/>
-            </div>
-            <div className="create-form-item flex-start-column">
-              <label htmlFor="input-alias">{configSystem.lang.ALIAS}</label>
-              <input
-              className="input-default"
-              id="input-alias"
-              type="text"
-              maxLength="20"
-              value={this.state.inputAlias}
-              onChange={ (e) => this.setState({inputAlias: e.target.value}) }/>
-            </div>
-            <div className="create-form-item flex-start-column">
-              <label htmlFor="input-phone">{configSystem.lang.PHONE}</label>
-              <input
-              className="input-default"
-              id="input-phone"
-              type="text"
-              maxLength="15"
-              value={this.state.inputPhone}
-              onChange={ (e) => this.setState({inputPhone: e.target.value}) }/>
-            </div>
-            <div className="create-form-item flex-start-column">
-              <label htmlFor="input-email">{configSystem.lang.EMAIL}</label>
-              <input
-              className="input-default"
-              id="input-email"
-              type="text"
-              maxLength="100"
-              value={this.state.inputEmail}
-              onChange={ (e) => this.setState({inputEmail: e.target.value}) }/>
+            <div className="create-form-inputs">
+              <div className="create-form-item flex-start-column">
+                <label htmlFor="input-name">{configSystem.lang.NAME}</label>
+                <input
+                className="input-default"
+                id="input-name"
+                type="text"
+                maxLength="20"
+                value={this.state.inputName}
+                onChange={ (e) => this.setState({inputName: e.target.value}) }/>
+              </div>
+              <div className="create-form-item flex-start-column">
+                <label htmlFor="input-alias">{configSystem.lang.ALIAS}</label>
+                <input
+                className="input-default"
+                id="input-alias"
+                type="text"
+                maxLength="20"
+                value={this.state.inputAlias}
+                onChange={ (e) => this.setState({inputAlias: e.target.value}) }/>
+              </div>
+              <div className="create-form-item flex-start-column">
+                <label htmlFor="input-phone">{configSystem.lang.PHONE}</label>
+                <input
+                className="input-default"
+                id="input-phone"
+                type="text"
+                maxLength="15"
+                value={this.state.inputPhone}
+                onChange={ (e) => this.setState({inputPhone: e.target.value}) }/>
+              </div>
+              <div className="create-form-item flex-start-column">
+                <label htmlFor="input-email">{configSystem.lang.EMAIL}</label>
+                <input
+                className="input-default"
+                id="input-email"
+                type="text"
+                maxLength="100"
+                value={this.state.inputEmail}
+                onChange={ (e) => this.setState({inputEmail: e.target.value}) }/>
+              </div>
             </div>
             <div className="create-form-btn">
               <button
+                type="submit"
                 disabled={this.validateForm()}
                 className="btn btn-primary use-icon">
                 <i className="fas fa-external-link-alt"></i>
                 {configSystem.lang.CREATE_CONTACT}
+              </button>
+              <button
+                type="button"
+                onClick={ (e) => this.props.history.goBack() }
+                className="btn btn-default use-icon">
+                {configSystem.lang.GO_BACK}
               </button>
             </div>
           </form>

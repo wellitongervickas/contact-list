@@ -34,6 +34,14 @@ const services = (() => {
     return contacts.deleteMessage(parentId, id);
   };
 
+  function updateMessage(parentId, id, data) {
+    return contacts.updateMessage(parentId, id, data);
+  };
+
+  function getMessageById(parentId, id) {
+    return contacts.getMessageById(parentId, id);
+  };
+
   return {
     createContact,
     getContacts,
@@ -42,7 +50,9 @@ const services = (() => {
     deleteContact,
     updateContact,
     deleteMessage,
-    createMessage
+    createMessage,
+    updateMessage,
+    getMessageById
   };
 })();
 

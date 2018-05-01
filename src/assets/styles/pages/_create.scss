@@ -9,13 +9,21 @@
     padding-top: 40px;
 
     .create-form {
-      display: grid;
-      grid-template-columns: 22%;
-      grid-template-areas:'a a b b';
-      grid-column-gap: 20px;
+      .create-form-inputs {
+        display: grid;
+        grid-template-columns: 22%;
+        grid-template-areas:'a a b b';
+        grid-column-gap: 20px;
 
-      .create-form-item {
-        margin-bottom: 40px;
+        .create-form-item {
+          margin-bottom: 40px;
+        }
+      }
+
+      .create-form-btn {
+        button {
+          margin-right: 10px;
+        }
       }
     }
   }

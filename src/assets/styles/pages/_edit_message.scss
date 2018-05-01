@@ -1,0 +1,24 @@
+.section-message {
+  .section-message-header {
+    h2 {
+      font-size: 16px;
+    }
+  }
+  .section-message-form {
+    margin-top: 40px;
+
+    .message-form-item  {
+      margin-bottom: 20px;
+
+      label {
+        margin-bottom: 5px;
+      }
+    }
+
+    .message-form-btn {
+      button {
+        margin-right: 10px;
+      }
+    }
+  }
+}

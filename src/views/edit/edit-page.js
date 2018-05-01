@@ -40,6 +40,12 @@ class EditPage extends Component {
     }
   };
 
+  /**
+    * This function submit new update to contact
+    * and update in API
+    *
+  */
+
   handleSubmitUpdate(e) {
     e.preventDefault();
 

@@ -165,7 +165,7 @@ class ProfilePage extends Component {
               </NavLink >
             </div>
             <div className="section-profile-header">
-              <h2>Profile Informations</h2>
+              <h2>{configSystem.lang.PROFILE_INFORMATIONS}</h2>
             </div>
             <div className="profile-intro">
               <div className="profile-intro-item">
@@ -203,10 +203,15 @@ class ProfilePage extends Component {
                       <div className="messages-body-item messages-body-title relative">
                         <h4>{configSystem.lang.TITLE}</h4>
                         {item.title}
-                        <i
-                          className="fas fa-trash pointer"
-                          onClick={(e) => this.handleDeleteMessage(item.id)}>
-                        </i>
+                        <div className="messages-body-item-actions">
+                          <NavLink className="use-icon" to={`/edit/${this.props.match.params.id}/messages/${item.id}`}>
+                            <i className="fas fa-edit"></i>
+                          </NavLink>
+                          <i
+                            className="fas fa-trash pointer"
+                            onClick={(e) => this.handleDeleteMessage(item.id)}>
+                          </i>
+                        </div>
                       </div>
                       <div className="messages-body-item messages-body-date">
                         <h4>{configSystem.lang.DATE}</h4>

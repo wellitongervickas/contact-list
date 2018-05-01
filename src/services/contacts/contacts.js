@@ -3,7 +3,6 @@ import configSystem from '../../models/system/config-system';
 
 const contacts = (() => {
 
-  // Contact
   function createContact(data) {
     return axios.post(`${configSystem.endpoint.contacts}`, data);
   }
@@ -21,16 +20,19 @@ const contacts = (() => {
   };
 
   function getFullContact(id) {
-    return axios.all([ getContact(id), getMessagesById(id) ])
+    return axios.all([ getContact(id), getMessages(id) ])
   };
 
   function updateContact(id, data) {
     return axios.put(`${configSystem.endpoint.contacts}/${id}`, data);
   };
 
-  // Messages
-  function getMessagesById(parentId) {
+  function getMessages(parentId) {
     return axios.get(`${configSystem.endpoint.contacts}/${parentId}/messages`)
+  };
+
+  function getMessageById(parentId, id) {
+    return axios.get(`${configSystem.endpoint.contacts}/${parentId}/messages/${id}`)
   };
 
   function createMessage(parentId, data) {
@@ -41,6 +43,10 @@ const contacts = (() => {
     return axios.delete(`${configSystem.endpoint.contacts}/${parentId}/messages/${id}`)
   };
 
+  function updateMessage(parentId, id, data) {
+    return axios.put(`${configSystem.endpoint.contacts}/${parentId}/messages/${id}`, data)
+  };
+
   return {
     createContact,
     getContacts,
@@ -49,8 +55,9 @@ const contacts = (() => {
     updateContact,
     deleteContact,
     createMessage,
-    getMessagesById,
-    deleteMessage
+    getMessageById,
+    deleteMessage,
+    updateMessage
   };
 })();
 

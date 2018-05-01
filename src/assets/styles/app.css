@@ -270,7 +270,9 @@ body {
       padding-bottom: 10px;
       margin-bottom: 10px;
       border-bottom: 1px solid #eee; }
-      .section-profile .profile-messages .profile-messages-body .messages-body-item.messages-body-title i {
+      .section-profile .profile-messages .profile-messages-body .messages-body-item h4 {
+        margin-bottom: 5px; }
+      .section-profile .profile-messages .profile-messages-body .messages-body-item.messages-body-title .messages-body-item-actions {
         position: absolute;
         right: -10px;
         top: -10px; }
@@ -300,13 +302,15 @@ body {
 
 .section-create .section-create-form {
   padding-top: 40px; }
-  .section-create .section-create-form .create-form {
+  .section-create .section-create-form .create-form .create-form-inputs {
     display: grid;
     grid-template-columns: 22%;
     grid-template-areas: 'a a b b';
     grid-column-gap: 20px; }
-    .section-create .section-create-form .create-form .create-form-item {
+    .section-create .section-create-form .create-form .create-form-inputs .create-form-item {
       margin-bottom: 40px; }
+  .section-create .section-create-form .create-form .create-form-btn button {
+    margin-right: 10px; }
 
 .section-edit .section-edit-header h2 {
   font-size: 16px; }
@@ -320,7 +324,21 @@ body {
     grid-column-gap: 20px; }
     .section-edit .section-edit-form .edit-form .edit-form-inputs .edit-form-item {
       margin-bottom: 40px; }
+      .section-edit .section-edit-form .edit-form .edit-form-inputs .edit-form-item label {
+        margin-bottom: 5px; }
   .section-edit .section-edit-form .edit-form .edit-form-btn button {
+    margin-right: 10px; }
+
+.section-message .section-message-header h2 {
+  font-size: 16px; }
+
+.section-message .section-message-form {
+  margin-top: 40px; }
+  .section-message .section-message-form .message-form-item {
+    margin-bottom: 20px; }
+    .section-message .section-message-form .message-form-item label {
+      margin-bottom: 5px; }
+  .section-message .section-message-form .message-form-btn button {
     margin-right: 10px; }
 
 .sections-content {
