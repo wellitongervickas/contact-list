@@ -1,0 +1,21 @@
+.section-create {
+  .section-create-header {
+    h2 {
+      font-size: 16px;
+    }
+  }
+
+  .section-create-form {
+    padding: 50px 0;
+    .create-form {
+      display: grid;
+      grid-template-columns: 22%;
+      grid-template-areas:'a a b b';
+      grid-column-gap: 20px;
+
+      .create-form-item {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

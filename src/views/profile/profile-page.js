@@ -7,19 +7,17 @@ import Contact from '../../models/class/contact-class';
 import configSystem from '../../models/system/config-system';
 import dateUtils from '../../models/utils/date-utils';
 
-// Components
-import Loading from '../../components/loading/loading';
 
 // Redux
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as toastActions from '../../store/actions/toast';
+import * as loadingActions from '../../store/actions/loading';
 
 class ProfilePage extends Component {
 
   // Default States
   state = {
-    loadingStatus: false,
     newMessageStatus: false,
     messageFormTitle: '',
     messageFormText: '',
@@ -42,7 +40,7 @@ class ProfilePage extends Component {
   handleDeleteMessage = (id) => {
 
     // Enable Loading
-    this.setState({ loadingStatus: true })
+    this.props.toggleLoading(true);
 
     services.deleteMessage(this.props.match.params.id, id)
     .then(res => {
@@ -62,14 +60,19 @@ class ProfilePage extends Component {
 
       this.clearNewMessageForm();
 
+      // Disable loading
+      this.props.toggleLoading(false);
+
     })
     .catch(err => {
 
-      this.setState({ loadingStatus: false });
       console.error(err);
 
       // Create a toast
       this.props.addToast(configSystem.lang.MESSAGE_REMOVED_FAIL, 'warning');
+
+      // Disable loading
+      this.props.toggleLoading(false);
     })
   };
 
@@ -82,7 +85,7 @@ class ProfilePage extends Component {
     e.preventDefault();
 
     // Enable Loading
-    this.setState({ loadingStatus: true })
+    this.props.toggleLoading(true);
 
     // Create message object
     let newMessage = {
@@ -100,7 +103,6 @@ class ProfilePage extends Component {
 
       this.setState({
         user,
-        loadingStatus: false,
         newMessageStatus: false,
       });
 
@@ -108,47 +110,49 @@ class ProfilePage extends Component {
       this.props.addToast(configSystem.lang.NEW_MESSAGE_SUCCESS, 'success');
 
       this.clearNewMessageForm();
+
+      // Disable loading
+      this.props.toggleLoading(false);
     })
     .catch(err => {
 
       console.error(err);
-      this.setState({ loadingStatus: true });
 
       // Create a toast
       this.props.addToast(configSystem.lang.NEW_MESSAGE_FAIL, 'warning');
+
+      // Disable loading
+      this.props.toggleLoading(false);
     })
   };
 
   componentDidMount = () => {
 
     // Enable Loading
-    this.setState({ loadingStatus: true })
+    this.props.toggleLoading(true);
 
     // Get contact info and messages
     services.getFullContact(this.props.match.params.id)
     .then(res => {
-      this.setState({
-        user: new Contact(res[0].data, res[1].data),
-        loadingStatus: false
-      });
 
+      this.setState({ user: new Contact(res[0].data, res[1].data) });
       this.clearNewMessageForm();
+
+      // Disable loading
+      this.props.toggleLoading(false);
     })
     .catch(err => {
-      console.error(err)
-      this.setState({ loadingStatus: false })
+
+      console.error(err);
+
+      // Disable loading
+      this.props.toggleLoading(false);
     })
   };
 
   render() {
     return (
       <div className="sections-content">
-
-        {
-          // Validate if loading is enabled
-          this.state.loadingStatus === true &&
-          <Loading></Loading>
-        }
 
         {
           // Validate if got a user id
@@ -236,7 +240,7 @@ class ProfilePage extends Component {
                         disabled={
                           !this.state.messageFormTitle.length || !this.state.messageFormText.length
                         }
-                        className="btn btn-success">
+                        className="btn btn-success use-icon">
                         <i className="fas fa-paper-plane"></i>
                         {configSystem.lang.SEND_MESSAGE}
                       </button>
@@ -255,7 +259,7 @@ class ProfilePage extends Component {
                     <button
                       type="button"
                       onClick={ (e) => this.setState({ newMessageStatus: true }) }
-                      className="btn btn-primary">
+                      className="btn btn-primary use-icon">
                       <i className="fas fa-comment-alt"></i>
                       {configSystem.lang.NEW_MESSAGE}
                     </button>
@@ -271,6 +275,9 @@ class ProfilePage extends Component {
 };
 
 // Redux State Binds
-const mapDispatchToProps = dispatch => bindActionCreators(toastActions, dispatch);
+const mapDispatchToProps = ((dispatch) => {
+  return bindActionCreators(Object.assign({}, toastActions, loadingActions), dispatch)
+});
+
 
 export default connect(null, mapDispatchToProps)(ProfilePage);

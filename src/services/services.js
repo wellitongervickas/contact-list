@@ -2,6 +2,10 @@ import contacts from './contacts/contacts';
 
 const services = (() => {
 
+  function createContact(data) {
+    return contacts.createContact(data);
+  }
+
   function getContacts() {
     return contacts.getContacts();
   };
@@ -31,6 +35,7 @@ const services = (() => {
   };
 
   return {
+    createContact,
     getContacts,
     getContact,
     getFullContact,

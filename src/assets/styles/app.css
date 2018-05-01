@@ -31,6 +31,9 @@ a {
 .hide {
   display: none; }
 
+.use-icon i {
+  margin-right: 10px; }
+
 .transition-slow, .btn:disabled, .btn:hover {
   transition: all 0.3s ease; }
 
@@ -119,6 +122,7 @@ body {
     box-shadow: inset 0 0 20px 5px rgba(0, 0, 0, 0.1); }
 
 .loading {
+  z-index: 5;
   width: 100%;
   height: 100%;
   position: fixed;
@@ -263,8 +267,6 @@ body {
       margin-bottom: 0px; }
   .section-profile .profile-messages .profile-messages-form, .section-profile .profile-messages .profile-messages-new {
     margin-top: 20px; }
-    .section-profile .profile-messages .profile-messages-form i, .section-profile .profile-messages .profile-messages-new i {
-      margin-right: 10px; }
   .section-profile .profile-messages .profile-messages-form {
     margin-top: 20px;
     padding-top: 20px;
@@ -278,9 +280,21 @@ body {
       .section-profile .profile-messages .profile-messages-form .messages-form-item.messages-form-buttons button {
         margin-right: 20px; }
 
+.section-create .section-create-header h2 {
+  font-size: 16px; }
+
+.section-create .section-create-form {
+  padding: 50px 0; }
+  .section-create .section-create-form .create-form {
+    display: grid;
+    grid-template-columns: 22%;
+    grid-template-areas: 'a a b b';
+    grid-column-gap: 20px; }
+    .section-create .section-create-form .create-form .create-form-item {
+      margin-bottom: 20px; }
+
 .sections-content {
   position: relative;
-  min-height: 400px;
   background-color: #fff;
   padding: 20px;
   box-shadow: inset 0px 7px 10px 0px rgba(0, 0, 0, 0.2);

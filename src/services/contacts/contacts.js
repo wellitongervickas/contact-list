@@ -4,6 +4,10 @@ import configSystem from '../../models/system/config-system';
 const contacts = (() => {
 
   // Contact
+  function createContact(data) {
+    return axios.post(`${configSystem.endpoint.contacts}`, data);
+  }
+
   function getContacts() {
     return axios.get(configSystem.endpoint.contacts);
   };
@@ -38,6 +42,7 @@ const contacts = (() => {
   };
 
   return {
+    createContact,
     getContacts,
     getContact,
     getFullContact,

@@ -7,19 +7,16 @@ import Contact from '../../models/class/contact-class';
 import services from '../../services/services';
 import configSystem from '../../models/system/config-system';
 
-// Components
-import Loading from '../../components/loading/loading';
-
 // Redux
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as toastActions from '../../store/actions/toast';
+import * as loadingActions from '../../store/actions/loading';
 
 class HomePage extends Component {
 
   // Default States
   state = {
-    loadingStatus: false,
     contacts: []
   };
 
@@ -31,48 +28,54 @@ class HomePage extends Component {
   handleDeleteContact = (id) => {
 
     // Enable Loading
-    this.setState({ loadingStatus: true });
+    this.props.toggleLoading(true);
 
     services.deleteContact(id)
     .then(res => {
 
       // Update Contact List
-      this.setState({
-        contacts: this.state.contacts.filter(item => item.id !== id),
-        loadingStatus: false
-      });
+      this.setState({ contacts: this.state.contacts.filter(item => item.id !== id) });
 
       // Create a toast
       this.props.addToast(configSystem.lang.CONTACT_REMOVED_SUCCESS, 'success');
+
+      // Disable loading
+      this.props.toggleLoading(false);
     })
     .catch(err => {
 
-      this.setState({ loadingStatus: false });
       console.error(err);
 
       // Create a toast
       this.props.addToast(configSystem.lang.CONTACT_REMOVED_FAIL, 'warning');
+
+      // Disable loading
+      this.props.toggleLoading(false);
     })
   };
 
   componentDidMount = () => {
 
     // Enable Loading
-    this.setState({ loadingStatus: true })
+    this.props.toggleLoading(true);
 
     services.getContacts()
-    .then(res => this.setState({
+    .then(res => {
 
-      contacts: res.data.map(item => new Contact(item)),
-      loadingStatus: false
-    }))
+      this.setState({ contacts: res.data.map(item => new Contact(item)) });
+
+      // Disable loading
+      this.props.toggleLoading(false);
+    })
     .catch(err => {
 
       console.error(err);
-      this.setState({ loadingStatus: false });
 
       // Create a toast
       this.props.addToast(configSystem.lang.CONNECTION_ERROR, 'danger');
+
+      // Disable loading
+      this.props.toggleLoading(false);
     });
   };
 
@@ -86,11 +89,6 @@ class HomePage extends Component {
               {configSystem.lang.NEW_CONTACT}
             </NavLink >
           </div>
-
-          {
-            this.state.loadingStatus === true &&
-            <Loading></Loading>
-          }
 
           {
             this.state.contacts.length <= 0 ? (
@@ -129,6 +127,8 @@ class HomePage extends Component {
 };
 
 // Redux State Binds
-const mapDispatchToProps = dispatch => bindActionCreators(toastActions, dispatch);
+const mapDispatchToProps = ((dispatch) => {
+  return bindActionCreators(Object.assign({}, toastActions, loadingActions), dispatch)
+});
 
 export default connect(null, mapDispatchToProps)(HomePage);
