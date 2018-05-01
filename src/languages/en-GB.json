@@ -18,5 +18,14 @@
   "TYPE_TITLE": "Type a title",
   "TYPE_MESSAGE": "Type a message",
   "SEND_MESSAGE": "Send Message",
-  "CANCEL": "Cancel"
+  "CANCEL": "Cancel",
+  "CONNECTION_ERROR": "Error to connect API",
+  "SUCCESS": "Success",
+  "ERROR": "Error",
+  "CONTACT_REMOVED_SUCCESS": "Contact was removed!",
+  "MESSAGE_REMOVED_SUCCESS": "Message was removed!",
+  "CONTACT_REMOVED_FAIL": "Failed to remove contact!",
+  "MESSAGE_REMOVED_FAIL": "Failed to remove message!",
+  "NEW_MESSAGE_SUCCESS": "New message was created!",
+  "NEW_MESSAGE_FAIL": "Failed to create new message!"
 }

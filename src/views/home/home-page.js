@@ -1,9 +1,19 @@
+// React and third party
 import React, { Component } from 'react';
 import { NavLink  } from "react-router-dom";
+
+// Helpers and libs
 import Contact from '../../models/class/contact-class';
 import services from '../../services/services';
 import configSystem from '../../models/system/config-system';
+
+// Components
 import Loading from '../../components/loading/loading';
+
+// Redux
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as toastActions from '../../store/actions/toast';
 
 class HomePage extends Component {
 
@@ -14,27 +24,34 @@ class HomePage extends Component {
   };
 
   /**
-    * When called that function, a contact is removed
+    * When called that function a contact is removed
     * from the list and update in service API
   */
 
   handleDeleteContact = (id) => {
 
     // Enable Loading
-    this.setState({ loadingStatus: true })
+    this.setState({ loadingStatus: true });
 
     services.deleteContact(id)
     .then(res => {
-      this.setState({
 
+      // Update Contact List
+      this.setState({
         contacts: this.state.contacts.filter(item => item.id !== id),
         loadingStatus: false
-      })
+      });
+
+      // Create a toast
+      this.props.addToast(configSystem.lang.CONTACT_REMOVED_SUCCESS);
     })
     .catch(err => {
 
-      this.setState({ loadingStatus: false })
-      console.error(err)
+      this.setState({ loadingStatus: false });
+      console.error(err);
+
+      // Create a toast
+      this.props.addToast(configSystem.lang.CONTACT_REMOVED_FAIL);
     })
   };
 
@@ -51,8 +68,11 @@ class HomePage extends Component {
     }))
     .catch(err => {
 
-      console.error(err)
-      this.setState({ loadingStatus: false })
+      console.error(err);
+      this.setState({ loadingStatus: false });
+
+      // Create a toast
+      this.props.addToast(configSystem.lang.CONNECTION_ERROR);
     });
   };
 
@@ -108,4 +128,7 @@ class HomePage extends Component {
   }
 };
 
-export default HomePage;
+// Redux State Binds
+const mapDispatchToProps = dispatch => bindActionCreators(toastActions, dispatch);
+
+export default connect(null, mapDispatchToProps)(HomePage);

@@ -4,6 +4,7 @@ export default function toast(state = [], actions) {
       return [...state, {
         text: actions.text,
         status: true,
+        timetoleave: (new Date().getTime() + 5000),
         id: new Date().getTime()
       }];
 

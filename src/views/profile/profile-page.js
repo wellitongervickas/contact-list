@@ -1,9 +1,19 @@
+// React and third party
 import React, { Component } from 'react';
+
+// Helpers and libs
 import services from '../../services/services';
 import Contact from '../../models/class/contact-class';
-import Loading from '../../components/loading/loading';
 import configSystem from '../../models/system/config-system';
 import dateUtils from '../../models/utils/date-utils';
+
+// Components
+import Loading from '../../components/loading/loading';
+
+// Redux
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as toastActions from '../../store/actions/toast';
 
 class ProfilePage extends Component {
 
@@ -16,16 +26,17 @@ class ProfilePage extends Component {
     user: ''
   }
 
+  // Only clear form
   clearNewMessageForm = () => {
     this.setState({
       messageFormTitle: '',
       messageFormText: ''
     });
-  }
+  };
 
   /**
-    * When called that function, remove one message from
-    * messages list
+    * When called that function remove one message from
+    * messages list and update user again
   */
 
   handleDeleteMessage = (id) => {
@@ -46,18 +57,24 @@ class ProfilePage extends Component {
         loadingStatus: false
       });
 
+      // Create a toast
+      this.props.addToast(configSystem.lang.MESSAGE_REMOVED_SUCCESS);
+
       this.clearNewMessageForm();
 
     })
     .catch(err => {
 
-      this.setState({ loadingStatus: false })
-      console.error(err)
+      this.setState({ loadingStatus: false });
+      console.error(err);
+
+      // Create a toast
+      this.props.addToast(configSystem.lang.MESSAGE_REMOVED_FAIL);
     })
-  }
+  };
 
   /**
-    * When called that function, new message is
+    * When called this function new message is
     * submited and update contact profile
   */
 
@@ -87,13 +104,20 @@ class ProfilePage extends Component {
         newMessageStatus: false,
       });
 
+      // Create a toast
+      this.props.addToast(configSystem.lang.NEW_MESSAGE_SUCCESS);
+
       this.clearNewMessageForm();
     })
     .catch(err => {
-      console.error(err)
-      this.setState({ loadingStatus: true })
+
+      console.error(err);
+      this.setState({ loadingStatus: true });
+
+      // Create a toast
+      this.props.addToast(configSystem.lang.NEW_MESSAGE_FAIL);
     })
-  }
+  };
 
   componentDidMount = () => {
 
@@ -245,4 +269,7 @@ class ProfilePage extends Component {
   }
 };
 
-export default ProfilePage;
+// Redux State Binds
+const mapDispatchToProps = dispatch => bindActionCreators(toastActions, dispatch);
+
+export default connect(null, mapDispatchToProps)(ProfilePage);
