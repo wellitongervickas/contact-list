@@ -10,7 +10,7 @@ const Header = () => {
           <i className="fas fa-address-book"></i>
         </span>
         <span className="title-text">
-          <NavLink to="/">
+          <NavLink to={`${configSystem.base}`}>
             {configSystem.lang.PROJECT_NAME}
           </NavLink >
         </span>

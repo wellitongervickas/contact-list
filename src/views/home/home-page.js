@@ -85,7 +85,9 @@ class HomePage extends Component {
         <div className="contact-list">
           <div className="list-header flex-between-center">
             <h2>{configSystem.lang.ALL_CONTACTS}</h2>
-            <NavLink to="/create" className="btn btn-primary btn-sm">
+            <NavLink
+              to={`${configSystem.base}create`}
+              className="btn btn-primary btn-sm">
               {configSystem.lang.NEW_CONTACT}
             </NavLink >
           </div>
@@ -103,14 +105,14 @@ class HomePage extends Component {
               this.state.contacts.map((item, index) => (
                 <div className="list-table-body" key={item.id}>
                   <div className="list-table-body-item item-name pointer">
-                    <NavLink to={`/profile/${item.id}`}>
+                    <NavLink to={`${configSystem.base}profile/${item.id}`}>
                       {item.name}
                     </NavLink >
                   </div>
                   <div className="list-table-body-item item-email">{item.email}</div>
                   <div className="list-table-body-item item-phone">{item.phone}</div>
                   <div className="list-table-body-item item-actions list-actions flex-end">
-                    <NavLink to={`/edit/${item.id}`}>
+                    <NavLink to={`${configSystem.base}edit/${item.id}`}>
                       <i className="fas fa-edit pointer"></i>
                     </NavLink >
                     <i

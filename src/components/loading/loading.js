@@ -10,7 +10,10 @@ class Loading extends Component {
         {
           this.props.loadingStatus &&
           <div className="loading flex-center">
-            <img src={loadingImage} alt={configSystem.lang.LOADING + this.props.loadingStatus}/>
+            <img src={
+                (configSystem.base !== '/') ? configSystem.base + loadingImage : loadingImage
+              }
+              alt={configSystem.lang.LOADING + this.props.loadingStatus}/>
           </div>
         }
       </div>

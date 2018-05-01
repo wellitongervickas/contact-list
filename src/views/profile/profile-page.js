@@ -160,7 +160,7 @@ class ProfilePage extends Component {
           this.state.user.id &&
           <div className="section-profile relative">
             <div className="profile-edit">
-              <NavLink to={`/edit/${this.props.match.params.id}`}>
+              <NavLink to={`${configSystem.base}edit/${this.props.match.params.id}`}>
                 <i className="fas fa-edit pointer"></i>
               </NavLink >
             </div>
@@ -204,7 +204,9 @@ class ProfilePage extends Component {
                         <h4>{configSystem.lang.TITLE}</h4>
                         {item.title}
                         <div className="messages-body-item-actions">
-                          <NavLink className="use-icon" to={`/edit/${this.props.match.params.id}/messages/${item.id}`}>
+                          <NavLink
+                            className="use-icon"
+                            to={`${configSystem.base}edit/${this.props.match.params.id}/messages/${item.id}`}>
                             <i className="fas fa-edit"></i>
                           </NavLink>
                           <i
