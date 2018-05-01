@@ -11,4 +11,11 @@ export function removeToast(id) {
     type: 'REMOVE_TOAST',
     id
   }
-}
+};
+
+export function autoRemove(list = []) {
+  return {
+    type: 'AUTO_REMOVE',
+    list
+  }
+};

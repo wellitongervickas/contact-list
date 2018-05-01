@@ -1,17 +1,20 @@
 export default function toast(state = [], actions) {
+
   switch (actions.type) {
     case 'ADD_TOAST':
-      let date = new Date().getTime();
       return [...state, {
         text: actions.text,
         toastType: actions.toastType,
         status: true,
-        timetoleave: (date + 5000),
-        id: date
+        timetoleave: (new Date().getTime() + 5000),
+        id: new Date().getTime()
       }];
 
     case 'REMOVE_TOAST':
-      return state.filter(item => item.id !== actions.id)
+      return [...state.filter(item => item.id !== actions.id)];
+
+    case 'AUTO_REMOVE':
+      return [...state.filter(item => item.timetoleave >= (new Date().getTime()))];
 
     default:
       return state;

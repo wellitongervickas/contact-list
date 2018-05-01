@@ -14,6 +14,16 @@ class Toast extends Component {
     this.props.removeToast(id);
   };
 
+  handleAutoRemoveToast = () => {
+    setInterval(() => {
+      this.props.autoRemove()
+    }, 500)
+  };
+
+  componentDidMount = () => {
+    this.handleAutoRemoveToast()
+  }
+
   render() {
     return (
       <div className="toasts-content">
@@ -25,7 +35,7 @@ class Toast extends Component {
                 className={`toasts-list-item toast-${item.toastType} relative`}
                 key={item.id} data-time={ item.timetoleave }>
                 <span className="toasts-item-title">{item.text}</span>
-                <span onClick={ (e) => this.handleRemoveToast(item.id) }className="toasts-item-remove">x</span>
+                <span onClick={ (e) => this.handleRemoveToast(item.id) } className="toasts-item-remove">x</span>
               </li>
             ))}
           </ul>

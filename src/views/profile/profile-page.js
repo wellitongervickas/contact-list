@@ -256,6 +256,7 @@ class ProfilePage extends Component {
                       type="button"
                       onClick={ (e) => this.setState({ newMessageStatus: true }) }
                       className="btn btn-primary">
+                      <i className="fas fa-comment-alt"></i>
                       {configSystem.lang.NEW_MESSAGE}
                     </button>
                   </div>
