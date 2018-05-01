@@ -164,37 +164,6 @@ body {
       .toasts-content .toasts-list .toasts-list-item.toast-danger {
         background-color: rgba(231, 76, 60, 0.9); }
 
-.container-fluid {
-  max-width: 100%;
-  margin: 30px;
-  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.2); }
-
-.flex, .flex-end, .flex-start-column, .flex-center, .flex-start-center, .flex-between-center, .flex-center-column {
-  display: flex; }
-
-.flex-end {
-  justify-content: flex-end; }
-
-.flex-start-column {
-  justify-content: flex-start;
-  flex-direction: column; }
-
-.flex-center {
-  justify-content: center;
-  align-items: center; }
-
-.flex-start-center {
-  justify-content: flex-start;
-  align-items: center; }
-
-.flex-between-center {
-  justify-content: space-between;
-  align-items: center; }
-
-.flex-center-column {
-  align-items: center;
-  flex-direction: column; }
-
 .section-home .contact-list {
   height: 100%; }
   .section-home .contact-list .list-header {
@@ -242,7 +211,12 @@ body {
   position: absolute;
   right: 0px;
   font-size: 16px;
-  top: 0px; }
+  top: 0px;
+  background-color: var(--primary-color);
+  padding: 10px;
+  border-radius: 0px 10px 0px 10px; }
+  .section-profile .profile-edit a {
+    color: #fff; }
 
 .section-profile .profile-intro {
   display: grid;
@@ -273,9 +247,15 @@ body {
       .section-profile .profile-messages .profile-messages-body .messages-body-item h4 {
         margin-bottom: 5px; }
       .section-profile .profile-messages .profile-messages-body .messages-body-item.messages-body-title .messages-body-item-actions {
+        font-size: 12px;
         position: absolute;
         right: -10px;
-        top: -10px; }
+        top: -10px;
+        padding: 10px;
+        background-color: var(--primary-color);
+        border-radius: 10px 0px 10px 0px; }
+        .section-profile .profile-messages .profile-messages-body .messages-body-item.messages-body-title .messages-body-item-actions, .section-profile .profile-messages .profile-messages-body .messages-body-item.messages-body-title .messages-body-item-actions a {
+          color: #fff; }
       .section-profile .profile-messages .profile-messages-body .messages-body-item:last-of-type {
         padding-bottom: 0px;
         border-bottom: none;
@@ -349,3 +329,88 @@ body {
   padding: 20px;
   box-shadow: inset 0px 7px 10px 0px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 10px 10px; }
+
+.container-fluid {
+  max-width: 100%;
+  margin: 30px;
+  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.2); }
+
+.flex, .flex-end, .flex-start-column, .flex-center, .flex-start-center, .flex-between-center, .flex-center-column {
+  display: flex; }
+
+.flex-end {
+  justify-content: flex-end; }
+
+.flex-start-column {
+  justify-content: flex-start;
+  flex-direction: column; }
+
+.flex-center {
+  justify-content: center;
+  align-items: center; }
+
+.flex-start-center {
+  justify-content: flex-start;
+  align-items: center; }
+
+.flex-between-center {
+  justify-content: space-between;
+  align-items: center; }
+
+.flex-center-column {
+  align-items: center;
+  flex-direction: column; }
+
+@media screen and (max-width: 768px) {
+  .section-profile .section-profile-header h2 {
+    margin-bottom: 0px; }
+  .section-profile .profile-intro {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column; }
+    .section-profile .profile-intro .profile-intro-item {
+      border: none;
+      padding: 20px 0; }
+  .section-profile .profile-messages .profile-messages-new {
+    display: flex;
+    flex-direction: column; }
+    .section-profile .profile-messages .profile-messages-new button {
+      margin-bottom: 10px; }
+  .section-profile .profile-messages .profile-messages-form .messages-form-item.messages-form-buttons {
+    display: flex;
+    flex-direction: column; }
+    .section-profile .profile-messages .profile-messages-form .messages-form-item.messages-form-buttons button {
+      margin-bottom: 10px; }
+  .section-profile .profile-messages .profile-messages-body .messages-body-item.messages-body-title .messages-body-item-actions {
+    top: -15px;
+    right: -15px; }
+  .section-message .section-message-form .message-form-btn {
+    display: flex;
+    justify-content: space-between; }
+    .section-message .section-message-form .message-form-btn button {
+      margin: 0px; }
+  .section-home .contact-list .list-table-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: auto; }
+    .section-home .contact-list .list-table-body .list-table-body-item.item-email {
+      display: none;
+      visibility: hidden; }
+  .section-edit .section-edit-form .edit-form .edit-form-inputs {
+    display: flex;
+    flex-direction: column; }
+  .section-edit .section-edit-form .edit-form .edit-form-btn {
+    display: flex;
+    flex-direction: column; }
+    .section-edit .section-edit-form .edit-form .edit-form-btn button {
+      margin-bottom: 10px; }
+  .section-create .section-create-form .create-form .create-form-inputs {
+    display: flex;
+    flex-direction: column; }
+  .section-create .section-create-form .create-form .create-form-btn {
+    display: flex;
+    flex-direction: column; }
+    .section-create .section-create-form .create-form .create-form-btn button {
+      margin-bottom: 10px; } }

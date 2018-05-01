@@ -102,14 +102,14 @@ class HomePage extends Component {
 
               this.state.contacts.map((item, index) => (
                 <div className="list-table-body" key={item.id}>
-                  <div className="list-table-body-item pointer">
+                  <div className="list-table-body-item item-name pointer">
                     <NavLink to={`/profile/${item.id}`}>
                       {item.name}
                     </NavLink >
                   </div>
-                  <div className="list-table-body-item">{item.email}</div>
-                  <div className="list-table-body-item">{item.phone}</div>
-                  <div className="list-table-body-item list-actions flex-end">
+                  <div className="list-table-body-item item-email">{item.email}</div>
+                  <div className="list-table-body-item item-phone">{item.phone}</div>
+                  <div className="list-table-body-item item-actions list-actions flex-end">
                     <NavLink to={`/edit/${item.id}`}>
                       <i className="fas fa-edit pointer"></i>
                     </NavLink >
