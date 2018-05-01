@@ -1,5 +1,6 @@
 // React and third party
 import React, { Component } from 'react';
+import { NavLink  } from "react-router-dom";
 
 // Helpers and libs
 import services from '../../services/services';
@@ -157,7 +158,15 @@ class ProfilePage extends Component {
         {
           // Validate if got a user id
           this.state.user.id &&
-          <div className="section-profile">
+          <div className="section-profile relative">
+            <div className="profile-edit">
+              <NavLink to={`/edit/${this.props.match.params.id}`}>
+                <i className="fas fa-edit pointer"></i>
+              </NavLink >
+            </div>
+            <div className="section-profile-header">
+              <h2>Profile Informations</h2>
+            </div>
             <div className="profile-intro">
               <div className="profile-intro-item">
                 <h3>{configSystem.lang.NAME}</h3>

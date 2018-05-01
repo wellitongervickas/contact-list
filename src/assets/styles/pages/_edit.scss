@@ -1,0 +1,30 @@
+.section-edit {
+  .section-edit-header {
+    h2 {
+      font-size: 16px;
+    }
+  }
+
+  .section-edit-form {
+    padding-top: 40px;
+
+    .edit-form {
+      .edit-form-inputs {
+        display: grid;
+        grid-template-columns: 22%;
+        grid-template-areas:'a a b b';
+        grid-column-gap: 20px;
+
+        .edit-form-item {
+          margin-bottom: 40px;
+        }
+      }
+
+      .edit-form-btn {
+        button {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}

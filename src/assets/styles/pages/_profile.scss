@@ -1,4 +1,17 @@
 .section-profile {
+  .section-profile-header {
+    h2 {
+      font-size: 16px;
+      margin-bottom: 40px;
+    }
+  }
+  .profile-edit {
+    position: absolute;
+    right: 0px;
+    font-size: 16px;
+    top: 0px;
+  }
+
   .profile-intro {
     display: grid;
     grid-template-columns: 23% 23% 23% 23%;

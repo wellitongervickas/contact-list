@@ -110,7 +110,9 @@ class HomePage extends Component {
                   <div className="list-table-body-item">{item.email}</div>
                   <div className="list-table-body-item">{item.phone}</div>
                   <div className="list-table-body-item list-actions flex-end">
-                    <i className="fas fa-edit pointer"></i>
+                    <NavLink to={`/edit/${item.id}`}>
+                      <i className="fas fa-edit pointer"></i>
+                    </NavLink >
                     <i
                       className="fas fa-trash pointer"
                       onClick={(e) => this.handleDeleteContact(item.id)}>

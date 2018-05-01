@@ -1,10 +1,7 @@
 // Home Page
 import HomePage from '../../views/home/home-page';
-
-// Contact Page
 import ProfilePage from '../../views/profile/profile-page';
-
-// Create Page
+import EditPage from '../../views/edit/edit-page';
 import CreatePage from '../../views/create/create-page';
 
 const routes = [
@@ -20,6 +17,10 @@ const routes = [
   {
     path: '/profile/:id',
     main: ProfilePage
+  },
+  {
+    path: '/edit/:id',
+    main: EditPage
   }
 ];
 
