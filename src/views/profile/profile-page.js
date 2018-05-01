@@ -66,7 +66,7 @@ class ProfilePage extends Component {
     })
     .catch(err => {
 
-      console.error(err);
+      console.error('err: ', err);
 
       // Create a toast
       this.props.addToast(configSystem.lang.MESSAGE_REMOVED_FAIL, 'warning');
@@ -116,7 +116,7 @@ class ProfilePage extends Component {
     })
     .catch(err => {
 
-      console.error(err);
+      console.error('err: ', err);
 
       // Create a toast
       this.props.addToast(configSystem.lang.NEW_MESSAGE_FAIL, 'warning');
@@ -143,7 +143,7 @@ class ProfilePage extends Component {
     })
     .catch(err => {
 
-      console.error(err);
+      console.error('err: ', err);
 
       // Disable loading
       this.props.toggleLoading(false);

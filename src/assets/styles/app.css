@@ -238,6 +238,11 @@ body {
   display: grid;
   grid-template-columns: 23% 23% 23% 23%;
   grid-column-gap: 20px; }
+  .section-profile .profile-intro .profile-intro-item {
+    padding: 20px;
+    border-left: 1px solid #ccc; }
+    .section-profile .profile-intro .profile-intro-item:first-of-type {
+      border-left: 1px solid transparent; }
 
 .section-profile .profile-messages {
   margin-top: 40px;
@@ -284,14 +289,14 @@ body {
   font-size: 16px; }
 
 .section-create .section-create-form {
-  padding: 50px 0; }
+  padding-top: 40px; }
   .section-create .section-create-form .create-form {
     display: grid;
     grid-template-columns: 22%;
     grid-template-areas: 'a a b b';
     grid-column-gap: 20px; }
     .section-create .section-create-form .create-form .create-form-item {
-      margin-bottom: 20px; }
+      margin-bottom: 40px; }
 
 .sections-content {
   position: relative;

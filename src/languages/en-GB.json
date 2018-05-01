@@ -22,6 +22,8 @@
   "CONNECTION_ERROR": "Error to connect API",
   "SUCCESS": "Success",
   "ERROR": "Error",
+  "CREATE_NEW_CONTACT": "Create New Contact",
+  "CREATE_CONTACT": "Create Contact",
   "NEW_CONTACT_SUCCESS": "Contact was created!",
   "NEW_CONTACT_FAIL": "Cannot create a contact!",
   "CONTACT_REMOVED_SUCCESS": "Contact was removed!",

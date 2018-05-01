@@ -44,7 +44,7 @@ class HomePage extends Component {
     })
     .catch(err => {
 
-      console.error(err);
+      console.error('err: ', err);
 
       // Create a toast
       this.props.addToast(configSystem.lang.CONTACT_REMOVED_FAIL, 'warning');
@@ -69,7 +69,7 @@ class HomePage extends Component {
     })
     .catch(err => {
 
-      console.error(err);
+      console.error('err: ', err);
 
       // Create a toast
       this.props.addToast(configSystem.lang.CONNECTION_ERROR, 'danger');

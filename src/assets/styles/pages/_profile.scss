@@ -3,6 +3,15 @@
     display: grid;
     grid-template-columns: 23% 23% 23% 23%;
     grid-column-gap: 20px;
+
+    .profile-intro-item {
+      padding: 20px;
+      border-left: 1px solid #ccc;
+
+      &:first-of-type {
+        border-left: 1px solid transparent;
+      }
+    }
   }
 
   .profile-messages {
