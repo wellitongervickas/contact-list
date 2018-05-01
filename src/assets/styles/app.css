@@ -284,6 +284,8 @@ body {
       margin-bottom: 0px; }
   .section-profile .profile-messages .profile-messages-form, .section-profile .profile-messages .profile-messages-new {
     margin-top: 20px; }
+  .section-profile .profile-messages .profile-messages-new button {
+    margin-right: 10px; }
   .section-profile .profile-messages .profile-messages-form {
     margin-top: 20px;
     padding-top: 20px;

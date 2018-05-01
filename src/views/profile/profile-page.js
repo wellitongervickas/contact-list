@@ -277,6 +277,12 @@ class ProfilePage extends Component {
                       <i className="fas fa-comment-alt"></i>
                       {configSystem.lang.NEW_MESSAGE}
                     </button>
+                    <button
+                      type="button"
+                      onClick={ (e) => this.props.history.goBack() }
+                      className="btn btn-default">
+                      {configSystem.lang.GO_BACK}
+                    </button>
                   </div>
                 )
               }

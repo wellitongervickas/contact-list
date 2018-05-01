@@ -137,7 +137,7 @@ class EditMessagePage extends Component {
               <button
                 type="button"
                 onClick={ (e) => this.props.history.goBack() }
-                className="btn btn-default use-icon">
+                className="btn btn-default">
                 {configSystem.lang.GO_BACK}
               </button>
             </div>
