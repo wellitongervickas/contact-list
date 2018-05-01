@@ -2,6 +2,7 @@
   "name": "contact-list",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://wellitongervickas.github.io/contact-list/build/",
   "dependencies": {
     "axios": "^0.18.0",
     "node-sass-chokidar": "^1.2.2",
