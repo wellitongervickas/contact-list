@@ -16,7 +16,7 @@ class ProfilePage extends Component {
     user: ''
   }
 
-  clearNewMessageForm() {
+  clearNewMessageForm = () => {
     this.setState({
       messageFormTitle: '',
       messageFormText: ''
@@ -28,7 +28,7 @@ class ProfilePage extends Component {
     * messages list
   */
 
-  handleDeleteMessage(id) {
+  handleDeleteMessage = (id) => {
 
     // Enable Loading
     this.setState({ loadingStatus: true })
@@ -61,7 +61,7 @@ class ProfilePage extends Component {
     * submited and update contact profile
   */
 
-  handleSubmitNewMessage(e) {
+  handleSubmitNewMessage = (e) => {
     e.preventDefault();
 
     // Enable Loading
@@ -95,7 +95,7 @@ class ProfilePage extends Component {
     })
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
 
     // Enable Loading
     this.setState({ loadingStatus: true })

@@ -12,13 +12,15 @@ import store from './store/store';
 import routes from './models/system/routes-system';
 
 // Componenets
-import HeaderComponenet from './components/header/header-componenet';
+import Header from './components/header/header';
+import Toast from './components/toast/toast';
 
 const App = () => (
   <Provider store={store}>
     <Router>
       <div className="sections container-fluid">
-        <HeaderComponenet></HeaderComponenet>
+        <Toast></Toast>
+        <Header></Header>
         {routes.map((route, index) => (
             <Route
               key={index}

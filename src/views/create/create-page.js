@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 
 class CreatePage extends Component {
-  constructor() {
-    super();
-    this.state = {
-      contact: {}
-    }
+
+  state = {
+    contact: {}
   }
 
   render() {

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { NavLink  } from "react-router-dom";
 import configSystem from '../../models/system/config-system';
 
-class HeaderComponenet extends Component {
+class Header extends Component {
   render() {
     return (
       <div className="header-section flex-between-center">
@@ -21,4 +21,4 @@ class HeaderComponenet extends Component {
   }
 };
 
-export default HeaderComponenet;
+export default Header;

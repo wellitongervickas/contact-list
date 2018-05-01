@@ -18,7 +18,7 @@ class HomePage extends Component {
     * from the list and update in service API
   */
 
-  handleDeleteContact(id) {
+  handleDeleteContact = (id) => {
 
     // Enable Loading
     this.setState({ loadingStatus: true })
@@ -38,7 +38,7 @@ class HomePage extends Component {
     })
   };
 
-  componentDidMount() {
+  componentDidMount = () => {
 
     // Enable Loading
     this.setState({ loadingStatus: true })
