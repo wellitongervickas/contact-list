@@ -128,12 +128,44 @@ body {
   bottom: 0px;
   background-color: rgba(255, 255, 255, 0.4); }
 
+.toasts-content {
+  position: fixed;
+  z-index: 4;
+  margin: 0 auto;
+  top: 20px;
+  width: 50%;
+  left: 0px;
+  right: 0px; }
+  .toasts-content .toasts-list {
+    width: 100%; }
+    .toasts-content .toasts-list .toasts-list-item {
+      text-align: center;
+      min-width: 200px;
+      color: #fff;
+      padding: 20px;
+      margin-bottom: 20px; }
+      .toasts-content .toasts-list .toasts-list-item .toasts-item-remove {
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 0px 5px;
+        position: absolute;
+        top: 0px;
+        right: 0px; }
+      .toasts-content .toasts-list .toasts-list-item.toast-default {
+        background-color: rgba(0, 0, 0, 0.9); }
+      .toasts-content .toasts-list .toasts-list-item.toast-success {
+        background-color: rgba(39, 174, 96, 0.9); }
+      .toasts-content .toasts-list .toasts-list-item.toast-warning {
+        background-color: rgba(243, 156, 18, 0.9); }
+      .toasts-content .toasts-list .toasts-list-item.toast-danger {
+        background-color: rgba(231, 76, 60, 0.9); }
+
 .container-fluid {
   max-width: 100%;
   margin: 30px;
   box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.2); }
 
-.flex, .flex-end, .flex-start-column, .flex-center, .flex-start-center, .flex-between-center {
+.flex, .flex-end, .flex-start-column, .flex-center, .flex-start-center, .flex-between-center, .flex-center-column {
   display: flex; }
 
 .flex-end {
@@ -154,6 +186,10 @@ body {
 .flex-between-center {
   justify-content: space-between;
   align-items: center; }
+
+.flex-center-column {
+  align-items: center;
+  flex-direction: column; }
 
 .section-home .contact-list {
   height: 100%; }

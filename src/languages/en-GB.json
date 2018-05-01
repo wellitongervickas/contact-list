@@ -26,6 +26,6 @@
   "MESSAGE_REMOVED_SUCCESS": "Message was removed!",
   "CONTACT_REMOVED_FAIL": "Failed to remove contact!",
   "MESSAGE_REMOVED_FAIL": "Failed to remove message!",
-  "NEW_MESSAGE_SUCCESS": "New message was created!",
-  "NEW_MESSAGE_FAIL": "Failed to create new message!"
+  "NEW_MESSAGE_SUCCESS": "New message was sended!",
+  "NEW_MESSAGE_FAIL": "Failed to send new message!"
 }

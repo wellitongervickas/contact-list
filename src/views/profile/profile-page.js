@@ -58,7 +58,7 @@ class ProfilePage extends Component {
       });
 
       // Create a toast
-      this.props.addToast(configSystem.lang.MESSAGE_REMOVED_SUCCESS);
+      this.props.addToast(configSystem.lang.MESSAGE_REMOVED_SUCCESS, 'success');
 
       this.clearNewMessageForm();
 
@@ -69,7 +69,7 @@ class ProfilePage extends Component {
       console.error(err);
 
       // Create a toast
-      this.props.addToast(configSystem.lang.MESSAGE_REMOVED_FAIL);
+      this.props.addToast(configSystem.lang.MESSAGE_REMOVED_FAIL, 'warning');
     })
   };
 
@@ -105,7 +105,7 @@ class ProfilePage extends Component {
       });
 
       // Create a toast
-      this.props.addToast(configSystem.lang.NEW_MESSAGE_SUCCESS);
+      this.props.addToast(configSystem.lang.NEW_MESSAGE_SUCCESS, 'success');
 
       this.clearNewMessageForm();
     })
@@ -115,7 +115,7 @@ class ProfilePage extends Component {
       this.setState({ loadingStatus: true });
 
       // Create a toast
-      this.props.addToast(configSystem.lang.NEW_MESSAGE_FAIL);
+      this.props.addToast(configSystem.lang.NEW_MESSAGE_FAIL, 'warning');
     })
   };
 

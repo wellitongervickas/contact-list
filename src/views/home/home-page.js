@@ -43,7 +43,7 @@ class HomePage extends Component {
       });
 
       // Create a toast
-      this.props.addToast(configSystem.lang.CONTACT_REMOVED_SUCCESS);
+      this.props.addToast(configSystem.lang.CONTACT_REMOVED_SUCCESS, 'success');
     })
     .catch(err => {
 
@@ -51,7 +51,7 @@ class HomePage extends Component {
       console.error(err);
 
       // Create a toast
-      this.props.addToast(configSystem.lang.CONTACT_REMOVED_FAIL);
+      this.props.addToast(configSystem.lang.CONTACT_REMOVED_FAIL, 'warning');
     })
   };
 
@@ -72,7 +72,7 @@ class HomePage extends Component {
       this.setState({ loadingStatus: false });
 
       // Create a toast
-      this.props.addToast(configSystem.lang.CONNECTION_ERROR);
+      this.props.addToast(configSystem.lang.CONNECTION_ERROR, 'danger');
     });
   };
 
